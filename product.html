@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AK products</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+        }
+        .container {
+            width: 90%;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        .product {
+            background: linear-gradient(45deg, #f2ddce, #2575fc);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            transition: transform 0.3s, background 0.3s;
+            cursor: pointer;
+            color: white;
+        }
+        .product:hover {
+            transform: scale(1.1);
+            background: linear-gradient(45deg, #f5daf1, #ee0979);
+        }
+        .product img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 8px;
+            transition: transform 0.3s ease-in-out;
+        }
+        .product img:hover {
+            transform: scale(1.1);
+        }
+        .product h3 {
+            margin: 10px 0;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container" id="product-container"></div>
+	<p>This all product contact AK CCTV Services <p>
+
+    <script>
+        const products = [
+            { name: "Camera 4 MP", image: "product/1.jpeg"},
+			{ name: "Solar Camera", image: "product/2.jpeg"},
+			{ name: "2.4 MP Camera", image: "product/3.jpeg"},
+			{ name: "Dome Camera with Mic colour", image: "product/4.jpeg"},
+			{ name: "Full HD Colour Camera", image: "product/5.jpeg"},
+			{ name: "8 MP Camera", image: "product/6.jpeg"},
+			{ name: "2 MP Outdoor Bullet Camera", image: "product/7.jpeg"},
+			{ name: "Bullet IP Camera 5MP", image: "product/8.jpeg"},
+			{ name: "DVR", image: "product/9.jpeg"},
+			{ name: "NVR", image: "product/10.jpeg"},
+			{ name: "2MP Indoor Camera", image: "product/11.jpeg"},
+			{ name: "Monitor", image: "product/12.jpeg"},
+			{ name: "BNC Connector", image: "product/13.jpeg"},
+			{ name: "BNC DC Wired Connector", image: "product/14.jpeg"},
+			{ name: "Monitor HP", image: "product/15.jpeg"},
+			{ name: "POE Switch", image: "product/16.jpeg"},
+			{ name: "RJ 45 Connector", image: "product/17.jpeg"},
+			{ name: "SMPS", image: "product/18.jpeg"},
+			{ name: "CAT6 Cable", image: "product/19.jpeg"},
+			{ name: "Bypass Connector", image: "product/20.jpeg"},
+			{ name: "3+1 Cable", image: "product/21.jpeg"}
+        ];
+
+        const container = document.getElementById("product-container");
+
+        container.innerHTML = products.map(product => `
+            <div class="product">
+                <img src="${product.image}" alt="${product.name}">
+                <h3>${product.name}</h3>
+            </div>
+        `).join('');
+    </script>
+</body>
+</html>
